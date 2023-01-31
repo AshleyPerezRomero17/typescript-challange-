@@ -1,21 +1,9 @@
-class Person {
-    name: string;
-    age: number;
-    address: string;
-
-    constructor(name: string, age: number, address: string) {
-        this.name = name;
-        this.age = age;
-        this.address = address;
+function sumArray(numbers: number[]) : number {
+    let result = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        result += numbers[i];
     }
-
-    getNameAndAddress(separator: string): string {
-        if (!separator) {
-            throw new Error('Separator is required');
-        }
-        return `${this.name} ${separator} ${this.address}`;
-    }
+    return result;
 }
 
-const person = new Person('John', 30, '123 Main St');
-console.log(person.getNameAndAddress(','));
+console.log(sumArray([1, 2, 3, 4, 5])); // will output 15
